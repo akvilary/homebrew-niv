@@ -19,8 +19,8 @@ class Niv < Formula
       (buildpath/"deps/tree-sitter-0.26.6").install Dir["*"]
     end
 
-    system "nim", "c", "-d:release", "--opt:size", "-o:niv", "src/niv.nim"
-    bin.install "niv"
+    system "nimble", "build", "-y", "-d:release"
+    bin.install buildpath/"niv"
   end
 
   test do
