@@ -5,6 +5,7 @@ class Niv < Formula
   sha256 "1528f3d3481a1df5ea19c8aec8be2bf1be46d69ab88bcfc5daf684ff7e637373"
   license "MIT"
 
+  depends_on "gcc" => :build
   depends_on "nim" => :build
 
   def install
