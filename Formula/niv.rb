@@ -9,7 +9,7 @@ class Niv < Formula
   depends_on "nim" => :build
 
   def install
-    system "nim", "c", "-d:release", "--opt:size", "src/niv.nim"
+    system "nim", "c", "-d:release", "--opt:size", "-o:niv", "src/niv.nim"
     bin.install "niv"
   end
 
