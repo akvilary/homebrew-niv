@@ -1,8 +1,8 @@
 class Niv < Formula
   desc "Vim-like terminal text editor with LSP and Tree-sitter support"
   homepage "https://github.com/akvilary/niv"
-  url "https://github.com/akvilary/niv/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "1528f3d3481a1df5ea19c8aec8be2bf1be46d69ab88bcfc5daf684ff7e637373"
+  url "https://github.com/akvilary/niv/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "eb080a927f1f0fdcfbf133eee869e75e3635f34f56a1b225eaa019d57d117b43"
   license "MIT"
 
   depends_on "gcc" => :build
@@ -21,9 +21,11 @@ class Niv < Formula
 
     system "nimble", "build", "-y", "-d:release"
     bin.install buildpath/"niv"
+    bin.install buildpath/"niv_json_lsp"
   end
 
   test do
     assert_predicate bin/"niv", :executable?
+    assert_predicate bin/"niv_json_lsp", :executable?
   end
 end
