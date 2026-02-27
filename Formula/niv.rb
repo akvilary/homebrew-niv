@@ -8,7 +8,17 @@ class Niv < Formula
   depends_on "gcc" => :build
   depends_on "nim" => :build
 
+  resource "tree-sitter" do
+    url "https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.26.6.tar.gz"
+    sha256 "b4218185a48a791d4022ab3969709e271a70a0253e94792abbcf18d7fcf4291c"
+  end
+
   def install
+    (buildpath/"deps/tree-sitter-0.26.6").mkpath
+    resource("tree-sitter").stage do
+      (buildpath/"deps/tree-sitter-0.26.6").install Dir["*"]
+    end
+
     system "nim", "c", "-d:release", "--opt:size", "-o:niv", "src/niv.nim"
     bin.install "niv"
   end
