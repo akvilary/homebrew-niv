@@ -2,8 +2,8 @@ class Niv < Formula
   desc "Vim-like terminal text editor with bundled LSP servers"
   homepage "https://github.com/akvilary/niv"
   url "https://github.com/akvilary/niv/archive/refs/heads/main.tar.gz"
-  sha256 "add7f495553b470c0102c10c6cdcda3fb734f08e214b6c98cb093bb5e1428193"
-  version "0.5.18"
+  sha256 "ccb9520352c274735e3213e9d0ef2280088cdb447099334f59ed15d936d9cfbe"
+  version "0.5.19"
   license "MIT"
 
   depends_on "gcc" => :build
